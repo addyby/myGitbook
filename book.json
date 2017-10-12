@@ -1,0 +1,84 @@
+﻿{
+  "title": " 项目管理系统平台手册" ,
+  "author": "addy" ,
+  "description": "介绍项目管理系统Redmine，版本控制系统Gitlab以及可持续集成工具Jenkins的基本配置和使用，同时对项目开发的工作流程提出建议。" ,
+  "extension": null ,
+  "generator": "site" ,
+  "language": "zh-hans" ,
+  "isbn": "" ,
+  "variables": { } ,
+  "theme-default": {
+    "showLevel": true
+  },
+  "structure": {
+    "readme": "intro.md"
+  } ,
+  "links": {
+    "gitbook": false ,
+    "sharing": {
+      "google": false ,
+      "facebook": false ,
+      "twitter": false ,
+      "all": false
+    },
+    "sidebar": {
+      "项目管系统": "/redmine",
+      "版本控制系统": "/git"
+    }
+  },
+  "output": null ,
+  "pdf": {
+    "fontSize": 12 ,
+    "footerTemplate": null ,
+    "headerTemplate": null ,
+    "margin": {
+      "bottom": 36 ,
+      "left": 62 ,
+      "right": 62 ,
+      "top": 36
+    } ,
+    "pageNumbers": false ,
+    "paperSize": "a4"
+  } ,
+  "plugins": [
+    "-lunr" ,
+    "-search" ,
+    "-highlight" ,
+    "prism" ,
+    "search-plus" ,
+    "theme-comscore" ,
+    "toggle-chapters" ,
+    "codeblock-filename" ,
+    "splitter" ,
+    "tbfed-pagefooter" ,
+    "anchor-navigation-ex" ,
+    "expandable-chapters-small" ,
+    "sectionx" ,
+    "disqus"
+  ] ,
+  "pluginsConfig": {
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+      ]
+    } ,
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy r00tuser 2017" ,
+      "modify_label": "该文件修订时间：" ,
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    } ,
+    "anchor-navigation-ex": {
+      "isRewritePageTitle": true ,
+      "isShowTocTitleIcon": true ,
+      "tocLevel1Icon": "fa fa-hand-o-right" ,
+      "tocLevel2Icon": "fa fa-hand-o-right" ,
+      "tocLevel3Icon": "fa fa-hand-o-right"
+    } ,
+    "sectionx": {
+      "tag": "b"
+    } ,
+    "disqus": {
+      "shortName": "yourshorName"
+    }
+  }
+}
