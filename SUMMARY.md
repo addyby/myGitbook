@@ -41,6 +41,7 @@
 
   - [2.7 Gui界面的使用](part1/git_use_gui.md)
 3. [Workflow工作流](part1/git_flow.md)
+   * [十一个规则](part1/git_workflow_top.md)
 
 ### LDAP
 
