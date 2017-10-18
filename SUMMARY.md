@@ -48,7 +48,11 @@
 * [LDAP服务器的管理](part2/ldap.md)
 
 ### GitLab 版本管理系统
-* [Gitlab基本使用操作](part3/gitlab_use.md)
+1. [Gitlab基本使用操作](part3/gitlab_use.md)
+   * [2.1 创建项目](part3/gitlab_use_create.md)
+   * 2.2 连接到GitLab
+   * 2.3 角色和权限
+
 * [Gitlab管理配置](part3/gitlab_config.md)
 
 ### Redmine 项目管理和缺陷跟踪系统
