@@ -144,7 +144,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 - 生成第一个ssh key(这里我用于github，用的gmail邮箱)
 
 ```
-    ssh-keygen -t rsa -C "yourmail@gmail.com" -l id_rsa_github
+    ssh-keygen -t rsa -C "yourmail@gmail.com" -f id_rsa_github
 ```
 
 这里不要一路回传，让你选择在哪里选择存放key的时候写个名字，比如 *id_rsa_github*，之后的两个可以回车。
@@ -157,7 +157,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 - 生成第二个ssh key（这里我用于gitlab，用的是公司邮箱）
 
   ```
-   ssh-keygen -t rsa -C "yourmail@gmail.com" -l id_rsa_gitlab
+   ssh-keygen -t rsa -C "yourmail@gmail.com" -f id_rsa_gitlab
   ```
 
   还是一样不要一路回车，在第一个对话的时候继续写个名字，比如 *id_rsa_gitlab*,之后的两个可以回车。
@@ -181,8 +181,8 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 ```
     # gitlab
-    Host git.iboxpay.com
-        HostName git.iboxpay.com  //这里填你们公司的git网址即可
+    Host 10.12.110.122
+        HostName 10.12.110.122
         PreferredAuthentications publickey
         IdentityFile ~/.ssh/id_rsa_gitlab
         User zhangjun

@@ -6,7 +6,7 @@ typora-copy-images-to: images
 
 > 多个系统的整合采用LDAP集中管理账号，可以把它理解成一个读强写弱的文件类型数据库。为了让各个系统使用相同的账号密码信息，我们把账户信息保存在LDAP中，各系统均使用该LDAP进行登录验证。
 >
-> 因此整个环境中的账号管理一定要在LDAP中进行。这里采用LDAP Account Manager (LAM)来提供LDAP目录的web前端管理功能。
+> 整个环境中的账号存储在LDAP中，这里采用LDAP Account Manager (LAM)来提供LDAP目录的web前端管理功能。
 >
 > 管理地址：http://10.12.110.122/ldap
 >
@@ -54,7 +54,7 @@ typora-copy-images-to: images
 
 
 
-由于使用了LDAP的MemberOf功能，此界面下的用户管理无法对用户所属分组进行设置。
+由于使用了LDAP的MemberOf功能，此界面下的用户管理功能中无法对用户所属分组进行直接设置。
 
 也可以使用树状结构查看信息。
 
@@ -96,7 +96,7 @@ typora-copy-images-to: images
 
 
 
-点击 member熟悉下的“增加值”链接，将会增加一行空白项。
+点击 member属性下的“增加值”链接，将会增加一行空白项。
 
 ![1508228446081](images/1508228446081.png)
 
@@ -136,7 +136,7 @@ typora-copy-images-to: images
 
 > RDN: 选择cn
 >
-> cn : 输入分组名称
+> cn : 输入分组名称，建议使用英文字母
 >
 > member：分组内成员，可选择cn=admin, dc=hrunicom, dc=local
 

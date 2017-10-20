@@ -49,11 +49,16 @@
 
 ### GitLab 版本管理系统
 1. [Gitlab基本使用操作](part3/gitlab_use.md)
-   * [2.1 创建项目](part3/gitlab_use_create.md)
-   * 2.2 连接到GitLab
-   * 2.3 角色和权限
-
-* [Gitlab管理配置](part3/gitlab_config.md)
+   * [1.1 创建项目](part3/gitlab_use_create.md)
+   * [1.2 连接到项目](part3/gitlab_use_link.md)
+   * [1.3 角色和权限](part3/gitlab_use_priv.md)
+   * [1.4 远程分支操作](part3/gitlab_use_branch.md)
+2. [Gitlab管理配置](part3/gitlab_config.md)
+   * 2.1 分支保护
+   * 2.2 分支合并
+   * 2.3 分支版本回退
+   * 2.4 实现工作流
+   * 2.5 实现代码审核
 
 ### Redmine 项目管理和缺陷跟踪系统
 
