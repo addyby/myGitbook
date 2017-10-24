@@ -48,14 +48,14 @@
 
 首先，我们创建`dev`分支，然后切换到`dev`分支：
 
-```shell
+```bash
 $ git checkout -b dev
 Switched to a new branch 'dev'
 ```
 
 `git checkout`命令加上`-b`参数表示创建并切换，相当于以下两条命令：
 
-```shell
+```bash
 $ git branch dev
 $ git checkout dev
 Switched to branch 'dev'
@@ -63,7 +63,7 @@ Switched to branch 'dev'
 
 然后，用`git branch`命令查看当前分支：
 
-```shell
+```bash
 $ git branch
 * dev
   master
@@ -73,13 +73,13 @@ $ git branch
 
 然后，我们就可以在`dev`分支上正常提交，比如对readme.txt做个修改，加上一行：
 
-```shell
+```bash
 Creating a new branch is quick.
 ```
 
 然后提交：
 
-```shell
+```bash
 $ git add readme.txt 
 $ git commit -m "branch test"
 [dev fec145a] branch test
@@ -88,7 +88,7 @@ $ git commit -m "branch test"
 
 现在，`dev`分支的工作完成，我们就可以切换回`master`分支：
 
-```shell
+```bash
 $ git checkout master
 Switched to branch 'master'
 ```
@@ -99,7 +99,7 @@ Switched to branch 'master'
 
 现在，我们把`dev`分支的工作成果合并到`master`分支上：
 
-```shell
+```bash
 $ git merge dev
 Updating d17efd8..fec145a
 Fast-forward
@@ -115,14 +115,14 @@ Fast-forward
 
 合并完成后，就可以放心地删除`dev`分支了：
 
-```shell
+```bash
 $ git branch -d dev
 Deleted branch dev (was fec145a).
 ```
 
 删除后，查看`branch`，就只剩下`master`分支了：
 
-```shell
+```bash
 $ git branch
 * master
 ```

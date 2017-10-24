@@ -4,7 +4,7 @@
 
 `git status` 命令的输出十分详细，但其用语有些繁琐。 如果你使用 `git status -s` 命令或 `git status --short` 命令，你将得到一种更为紧凑的格式输出。 运行 `git status -s` ，状态报告输出如下：
 
-```shell
+```bash
 $ git status -s
  M README
 MM Rakefile

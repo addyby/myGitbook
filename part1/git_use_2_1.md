@@ -6,7 +6,7 @@
 
 如果在克隆仓库后立即使用此命令，会看到类似这样的输出：
 
-```shell
+```bash
 $ git status
 On branch master
 nothing to commit, working directory clean
@@ -16,7 +16,7 @@ nothing to commit, working directory clean
 
 现在，让我们在项目下创建一个新的 README 文件。 如果之前并不存在这个文件，使用 git status 命令，你将看到一个新的未跟踪文件：
 
-```shell
+```bash
 $ echo 'My Project' > README
 $ git status
 On branch master

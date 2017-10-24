@@ -58,7 +58,7 @@
 
 
 
-现在讲下我们团队针对Gitflow的一些实践：
+现在讲下针对Gitflow的一些实践：
 
 **master分支**
 
@@ -99,21 +99,20 @@
 
 1). 首先将远程代码拉取到本地
 
-```
+```bash
     git clone xxx
     git checkout -b develop origin/develop
-
 ```
 
 2).新建feature分支
 
-```
+```bash
     git checkout -b feature 1
 ```
 
 3).多人在feature上开发，如果中途需要将develop的变更合入feature，所有人需要将本地的代码变更提交到远程
 
-```
+```bash
     git fetch origin 
     git rebase origin/feature
     git push origin feature123
@@ -121,29 +120,27 @@
 
 然后由feature负责人rebase develop分支，删除原来feature分支，重新新建feature分支；
 
-```
+```bash
     git fetch origin
     git rebase origin/feature
     git rebase develop
     git push origin :feature
     git push origin feature
-
 ```
 
 这样可以保证feature保持线性变更；
 
 4).feature开发完成后，所有人需要将本地的代码变更提交到远程
 
-```
+```bash
     git fetch origin 
     git rebase origin/feature
     git push origin feature
-
 ```
 
 然后由feature负责人rebase develop分支，然后将feature分支合入develop，删除feature；
 
-```
+```bash
     git fetch origin
     git rebase origin/feature
     git rebase develop
@@ -155,23 +152,22 @@
 这样可以保证develop保持线性变更，各feature的变更完整可追溯； 
 5).合入feature后拉出对应的release/feature分支，后续bug修复在release/feature上
 
-```
+```bash
     git checkout develop
     git checkout -b release/feature
-
 ```
 
 release/feature分支的同步合并与feature分支相同 
 6).release/feature分支bug修复完成后，拉取对应的tag推送远程进行发布
 
-```
+```bash
     git tag -a v1.0 -m 'feature发布'
     git push origin v1.012
 ```
 
 之后将release/feature合入develop分支，然后删除
 
-```
+```bash
     git rebase develop
     git checkout develop
     git merge release/feature

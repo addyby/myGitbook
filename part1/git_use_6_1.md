@@ -2,7 +2,7 @@
 
 在Git中打标签非常简单，首先，切换到需要打标签的分支上：
 
-```shell
+```bash
 $ git branch
 * dev
   master
@@ -18,7 +18,7 @@ $ git tag v1.0shell
 
 可以用命令`git tag`查看所有标签：
 
-```shell
+```bash
 $ git tag
 v1.0
 ```
@@ -27,7 +27,7 @@ v1.0
 
 方法是找到历史提交的commit id，然后打上就可以了：
 
-```shell
+```bash
 $ git log --pretty=oneline --abbrev-commit
 6a5819e merged bug fix 101
 cc17032 fix bug 101
@@ -43,13 +43,13 @@ d17efd8 remove test.txt
 
 比方说要对`add merge`这次提交打标签，它对应的commit id是`6224937`，敲入命令：
 
-```shell
+```bash
 $ git tag v0.9 6224937
 ```
 
 再用命令`git tag`查看标签：
 
-```shell
+```bash
 $ git tag
 v0.9
 v1.0
@@ -57,7 +57,7 @@ v1.0
 
 注意，标签不是按时间顺序列出，而是按字母排序的。可以用`git show <tagname>`查看标签信息：
 
-```shell
+```bash
 $ git show v0.9
 commit 622493706ab447b6bb37e4e2a2f276a20fed2ab4
 Author: Michael Liao <askxuefeng@gmail.com>
@@ -77,7 +77,7 @@ $ git tag -a v0.1 -m "version 0.1 released" 3628164
 
 用命令`git show <tagname>`可以看到说明文字：
 
-```shell
+```bash
 $ git show v0.1
 tag v0.1
 Tagger: Michael Liao <askxuefeng@gmail.com>
@@ -94,13 +94,13 @@ Date:   Tue Aug 20 15:11:49 2013 +0800
 
 还可以通过`-s`用私钥签名一个标签：
 
-```shell
+```bash
 $ git tag -s v0.2 -m "signed version 0.2 released" fec145a
 ```
 
 签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错：
 
-```shell
+```bash
 gpg: signing failed: secret key not available
 error: gpg failed to sign the data
 error: unable to sign the tag
@@ -110,7 +110,7 @@ error: unable to sign the tag
 
 用命令`git show <tagname>`可以看到PGP签名信息：
 
-```shell
+```bash
 $ git show v0.2
 tag v0.2
 Tagger: Michael Liao <askxuefeng@gmail.com>

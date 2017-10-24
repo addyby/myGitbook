@@ -8,7 +8,7 @@
 
 有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行带有 `--amend`选项的提交命令尝试重新提交：
 
-```shell
+```bash
 $ git commit --amend
 ```
 
@@ -18,7 +18,7 @@ $ git commit --amend
 
 例如，你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作：
 
-```shell
+```bash
 $ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend
@@ -32,7 +32,7 @@ $ git commit --amend
 
 接下来的两个小节演示如何操作暂存区域与工作目录中已修改的文件。 这些命令在修改文件状态的同时，也会提示如何撤消操作。 例如，你已经修改了两个文件并且想要将它们作为两次独立的修改提交，但是却意外地输入了 `git add`  暂存了它们两个。 如何只取消暂存两个中的一个呢？ `git status`  命令提示了你：
 
-```shell
+```bash
 $ git add *
 $ git status
 On branch master
@@ -45,7 +45,7 @@ Changes to be committed:
 
 在 “Changes to be committed” 文字正下方，提示使用 `git reset HEAD <file>...` 来取消暂存。 所以，我们可以这样来取消暂存`CONTRIBUTING.md` 文件：
 
-```shell
+```bash
 $ git reset HEAD CONTRIBUTING.md
 Unstaged changes after reset:
 M    CONTRIBUTING.md
@@ -71,7 +71,7 @@ Changes not staged for commit:
 
 如果你并不想保留对 CONTRIBUTING.md 文件的修改怎么办？ 你该如何方便地撤消修改 - 将它还原成上次提交时的样子（或者刚克隆完的样子，或者刚把它放入工作目录时的样子）？ 幸运的是，git status 也告诉了你应该如何做。 在最后一个例子中，未暂存区域是这样：
 
-```shell
+```bash
 Changes not staged for commit:
     (use "git add <file>..." to update what will be committed)
     (use "git checkout -- <file>..." to discard changes in working directory)
@@ -81,7 +81,7 @@ Changes not staged for commit:
 
 它非常清楚地告诉了你如何撤消之前所做的修改。 让我们来按照提示执行：
 
-```shell
+```bash
 $ git checkout -- CONTRIBUTING.md
 $ git status
 On branch master

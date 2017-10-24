@@ -2,7 +2,7 @@
 typora-copy-images-to: images
 ---
 
-# 1. Gitlab基本使用操作
+## 1. Gitlab基本使用操作
 
 GitLab 是一个用于仓库管理系统的开源项目。使用[Git](http://baike.baidu.com/view/1531489.htm)作为代码管理工具，并在此基础上搭建起来的web服务。
 

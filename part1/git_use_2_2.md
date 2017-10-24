@@ -4,13 +4,13 @@
 
 使用命令 `git add` 开始跟踪一个文件。所以，要跟踪 README 文件，运行：
 
-```shell
+```bash
 $ git add README
 ```
 
 此时再运行 git status 命令，会看到 README 文件已被跟踪，并处于暂存状态：
 
-```shell
+```bash
 $ git status
 On branch master
 Changes to be committed:

@@ -4,14 +4,14 @@
 
 要查看远程库的信息，用`git remote`：
 
-```shell
+```bash
 $ git remote
 origin
 ```
 
 或者，用`git remote -v`显示更详细的信息：
 
-```shell
+```bash
 $ git remote -v
 origin  git@github.com:michaelliao/learngit.git (fetch)
 origin  git@github.com:michaelliao/learngit.git (push)
@@ -23,13 +23,13 @@ origin  git@github.com:michaelliao/learngit.git (push)
 
 推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：
 
-```shell
+```bash
 $ git push origin master
 ```
 
 如果要推送其他分支，比如`dev`，就改成：
 
-```shell
+```bash
 $ git push origin dev
 ```
 
@@ -48,7 +48,7 @@ $ git push origin dev
 
 现在，模拟一个你的小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆：
 
-```shell
+```bash
 $ git clone git@github.com:michaelliao/learngit.git
 Cloning into 'learngit'...
 remote: Counting objects: 46, done.
@@ -60,20 +60,20 @@ Resolving deltas: 100% (16/16), done.
 
 当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的`master`分支。不信可以用`git branch`命令看看：
 
-```shell
+```bash
 $ git branch
 * master
 ```
 
 现在，你的小伙伴要在`dev`分支上开发，就必须创建远程`origin`的`dev`分支到本地，于是他用这个命令创建本地`dev`分支：
 
-```shell
+```bash
 $ git checkout -b dev origin/dev
 ```
 
 现在，他就可以在`dev`上继续修改，然后，时不时地把`dev`分支`push`到远程：
 
-```shell
+```bash
 $ git commit -m "add /usr/bin/env"
 [dev 291bea8] add /usr/bin/env
  1 file changed, 1 insertion(+)
@@ -89,7 +89,7 @@ To git@github.com:michaelliao/learngit.git
 
 你的小伙伴已经向`origin/dev`分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送：
 
-```shell
+```bash
 $ git add hello.py 
 $ git commit -m "add coding: utf-8"
 [dev bd6ae48] add coding: utf-8
@@ -106,7 +106,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用`git pull`把最新的提交从`origin/dev`抓下来，然后，在本地合并，解决冲突，再推送：
 
-```shell
+```bash
 $ git pull
 remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -127,14 +127,14 @@ If you wish to set tracking information for this branch you can do so with:
 
 `git pull`也失败了，原因是没有指定本地`dev`分支与远程`origin/dev`分支的链接，根据提示，设置`dev`和`origin/dev`的链接：
 
-```shell
+```bash
 $ git branch --set-upstream dev origin/dev
 Branch dev set up to track remote branch dev from origin.
 ```
 
 再pull：
 
-```shell
+```bash
 $ git pull
 Auto-merging hello.py
 CONFLICT (content): Merge conflict in hello.py
@@ -143,7 +143,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 这回`git pull`成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的[解决冲突](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000)完全一样。解决后，提交，再push：
 
-```shell
+```bash
 $ git commit -m "merge & fix hello.py"
 [dev adca45d] merge & fix hello.py
 $ git push origin dev

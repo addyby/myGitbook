@@ -4,7 +4,7 @@
 
 现在的暂存区域已经准备妥当可以提交了。在此之前，请一定要确认还有什么修改过的或新建的文件还没有 `git add` 过，否则提交的时候不会记录这些还没暂存起来的变化。这些修改过的文件只保留在本地磁盘。所以，每次准备提交前，先用 `git status` 看下，是不是都已暂存起来了，然后再运行提交命令 `git commit` ：
 
-```shell
+```bash
 $ git commit
 ```
 
@@ -13,7 +13,7 @@ $ git commit
 
 编辑器会显示类似下面的文本信息（本例选用 Vim 的屏显方式展示）：
 
-```shell
+```bash
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 # On branch master
@@ -31,7 +31,7 @@ $ git commit
 
 另外，你也可以在 `commit` 命令后添加 `-m` 选项，将提交信息与命令放在同一行，如下所示：
 
-```shell
+```bash
 $ git commit -m "Story 182: Fix benchmarks for speed"
 [master 463dc4f] Story 182: Fix benchmarks for speed
  2 files changed, 2 insertions(+)

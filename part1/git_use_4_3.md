@@ -8,14 +8,14 @@
 
 首先，仍然创建并切换`dev`分支：
 
-```shell
+```bash
 $ git checkout -b dev
 Switched to a new branch 'dev'
 ```
 
 修改readme.txt文件，并提交一个新的commit：
 
-```shell
+```bash
 $ git add readme.txt 
 $ git commit -m "add merge"
 [dev 6224937] add merge
@@ -24,14 +24,14 @@ $ git commit -m "add merge"
 
 现在，我们切换回`master`：
 
-```shell
+```bash
 $ git checkout master
 Switched to branch 'master'
 ```
 
 准备合并`dev`分支，请注意`--no-ff`参数，表示禁用`Fast forward`：
 
-```shell
+```bash
 $ git merge --no-ff -m "merge with no-ff" dev
 Merge made by the 'recursive' strategy.
  readme.txt |    1 +
@@ -42,7 +42,7 @@ Merge made by the 'recursive' strategy.
 
 合并后，我们用`git log`看看分支历史：
 
-```shell
+```bash
 $ git log --graph --pretty=oneline --abbrev-commit
 *   7825a50 merge with no-ff
 |\

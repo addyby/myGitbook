@@ -6,13 +6,13 @@
 
 既然如此，当你看到 Git 的 `mv` 命令时一定会困惑不已。 要在 Git 中对文件改名，可以这么做：
 
-```shell
+```bash
 $ git mv file_from file_to
 ```
 
 它会恰如预期般正常工作。 实际上，即便此时查看状态信息，也会明白无误地看到关于重命名操作的说明：
 
-```shell
+```bash
 $ git mv README.md README
 $ git status
 On branch master
@@ -24,7 +24,7 @@ Changes to be committed:
 
 其实，运行 git mv 就相当于运行了下面三条命令：
 
-```shell
+```bash
 $ mv README.md README
 $ git rm README.md
 $ git add README

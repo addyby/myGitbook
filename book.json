@@ -10,9 +10,7 @@
   "theme-default": {
     "showLevel": true
   },
-  "structure": {
-    "readme": "intro.md"
-  } ,
+
   "links": {
     "gitbook": false ,
     "sharing": {
@@ -45,40 +43,32 @@
     "-search" ,
     "-highlight" ,
     "prism" ,
+    "prism-themes",
     "search-plus" ,
-    "theme-comscore" ,
     "toggle-chapters" ,
     "codeblock-filename" ,
     "splitter" ,
     "tbfed-pagefooter" ,
     "anchor-navigation-ex" ,
     "expandable-chapters-small" ,
-    "sectionx" ,
-    "disqus"
+    "sectionx"
   ] ,
   "pluginsConfig": {
     "prism": {
       "css": [
-        "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+        "prismjs/themes/prism-tomorrow.css"
       ]
     } ,
     "tbfed-pagefooter": {
-      "copyright": "Copyright &copy r00tuser 2017" ,
+      "copyright": "Copyright &copy addy 2017" ,
       "modify_label": "该文件修订时间：" ,
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     } ,
     "anchor-navigation-ex": {
-      "isRewritePageTitle": true ,
-      "isShowTocTitleIcon": true ,
-      "tocLevel1Icon": "fa fa-hand-o-right" ,
-      "tocLevel2Icon": "fa fa-hand-o-right" ,
-      "tocLevel3Icon": "fa fa-hand-o-right"
+      "mode":""
     } ,
     "sectionx": {
       "tag": "b"
-    } ,
-    "disqus": {
-      "shortName": "yourshorName"
-    }
+    } 
   }
 }

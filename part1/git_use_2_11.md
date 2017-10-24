@@ -4,13 +4,13 @@
 
 接下来的例子会用我专门用于演示的 simplegit 项目， 运行下面的命令获取该项目源代码：
 
-```shell
+```bash
 git clone https://github.com/schacon/simplegit-progit
 ```
 
 然后在此项目中运行 `git log`，应该会看到下面的输出：
 
-```shell
+```bash
 $ git log
 commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon <schacon@gee-mail.com>
@@ -37,7 +37,7 @@ Date:   Sat Mar 15 10:31:28 2008 -0700
 
 1.一个常用的选项是 `-p`，用来显示每次提交的内容差异。 你也可以加上 `-2` 来仅显示最近两次提交：
 
-```shell
+```bash
 $ git log -p -2
 commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon <schacon@gee-mail.com>
@@ -85,7 +85,7 @@ index a0a60ae..47c6340 100644
 
 2.你也可以为 `git log` 附带一系列的总结性选项。 比如说，如果你想看到每次提交的简略的统计信息，你可以使用 `--stat` 选项：
 
-```shell
+```bash
 $ git log --stat
 commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon <schacon@gee-mail.com>
@@ -121,7 +121,7 @@ Date:   Sat Mar 15 10:31:28 2008 -0700
 
 3.另外一个常用的选项是 `--pretty` 。 这个选项可以指定使用不同于默认格式的方式展示提交历史。 这个选项有一些内建的子选项供你使用。 比如用 `oneline` 将每个提交放在一行显示，查看的提交数很大时非常有用。 另外还有 `short`，`full` 和 `fuller` 可以用，展示的信息或多或少有些不同，请自己动手实践一下看看效果如何。
 
-```shell
+```bash
 $ git log --pretty=oneline
 ca82a6dff817ec66f44342007202690a93763949 changed the version number
 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 removed unnecessary test
@@ -130,7 +130,7 @@ a11bef06a3f659402fe7563abf99ad00de2209e6 first commit
 
 4.但最有意思的是 `format`，可以定制要显示的记录格式。 这样的输出对后期提取分析格外有用 — 因为你知道输出的格式不会随着Git的更新而发生改变：
 
-```shell
+```bash
 $ git log --pretty=format:"%h - %an, %ar : %s"
 ca82a6d - Scott Chacon, 6 years ago : changed the version number
 085bb3b - Scott Chacon, 6 years ago : removed unnecessary test
@@ -145,7 +145,7 @@ a11bef0 - Scott Chacon, 6 years ago : first commit
 
 当 `oneline` 或 `format` 与另一个 log 选项 `--graph` 结合使用时尤其有用。 这个选项添加了一些ASCII字符串来形象地展示你的分支、合并历史：
 
-```shell
+```bash
 $ git log --pretty=format:"%h %s" --graph
 * 2d3acf9 ignore errors from SIGCHLD on trap
 *  5e3ee11 Merge branch 'master' of git://github.com/dustin/grit

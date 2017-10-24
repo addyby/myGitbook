@@ -4,7 +4,7 @@
 
 > 平时当中gitlab的master分支是protected的 ![输入图片说明](https://static.oschina.net/uploads/img/201709/09145217_bza9.png) 平时这个分支的合并和push并没有问题， 但是，当你回滚到某个版本再push的时候就会报错
 
-```powershell
+```bash
 remote: GitLab: You are  allowed  to  deleted protected branches from this project. 
 To http://gitlab.test.com/root/test.git !
  [remote rejected] master (pre-receive hook declined) error: failed to push some refs to 'http://gitlab.test.com/xxxx/xxxx.git'
@@ -14,7 +14,7 @@ To http://gitlab.test.com/root/test.git !
 
 - 新建backup分支 作为备份，以防万一
 
-```shell
+```bash
 git branch backup 
 ```
 
@@ -34,7 +34,7 @@ git push -f origin master
 
 ## 有jenkins自动同步的服务器的（与gitlab不在同一台服务器的），如果有回滚，则需要
 
-```shell
+```bash
 报错
 Your branch is ahead of 'origin/master' by 3 commits.
 ```
@@ -55,7 +55,7 @@ git pull &&  git reset --hard origin/master
 
 ##### 如果远程是master分支
 
-```shell
+```bash
 cd /home/www/test && git checkout -f master && git pull && git reset --hard origin/master
 这样可以
 如果
@@ -65,13 +65,13 @@ cd /home/www/test && git checkout -f master && git pull origin master && git res
 
 ##### 如果远程是其他分支（test），则一定要这样
 
-```shell
+```bash
  cd /home/www/test && git checkout -f test && git pull origin test && git reset --hard origin/test
 ```
 
 ### 所以gitlab与代码运行不在同一台服务器的，包括jenkins触发的代码同步和回滚同步要实行以下两个规则
 
-```shell
+```bash
 master的则一定要这样：
  cd /home/www/test && git checkout -f master && git pull && git reset --hard origin/master
 其他分支的比如test分支，则一定要这样：

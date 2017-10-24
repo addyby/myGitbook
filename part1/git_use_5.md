@@ -2,19 +2,18 @@
 typora-copy-images-to: images
 ---
 
-# 2.5 版本回退
+## 2.5 版本回退
 
 版本库中修改readme.txt文件如下：
 
 ```
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
-
 ```
 
 然后尝试提交：
 
-```shell
+```bash
 $ git add readme.txt
 $ git commit -m "append GPL"
 [master 3628164] append GPL
@@ -50,7 +49,7 @@ Git is free software distributed under the GPL.
 
 当然了，在实际工作中，我们脑子里怎么可能记得一个几千行的文件每次都改了什么内容，不然要版本控制系统干什么。版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用`git log`命令查看：
 
-```shell
+```bash
 $ git log
 commit 3628164fb26d48395383f8f31179f24e0882e1e0
 Author: Michael Liao <askxuefeng@gmail.com>
@@ -73,7 +72,7 @@ Date:   Mon Aug 19 17:51:55 2013 +0800
 
 `git log`命令显示从最近到最远的提交日志，我们可以看到3次提交，最近的一次是`append GPL`，上一次是`add distributed`，最早的一次是`wrote a readme file`。如果嫌输出信息太多，看得眼花缭乱的，可以试试加上`--pretty=oneline`参数：
 
-```shell
+```bash
 $ git log --pretty=oneline
 3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
 ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
@@ -92,7 +91,7 @@ cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
 
 现在，我们要把当前版本“append GPL”回退到上一个版本“add distributed”，就可以使用`git reset`命令：
 
-```shell
+```bash
 $ git reset --hard HEAD^
 HEAD is now at ea34578 add distributed
 ```
@@ -101,7 +100,7 @@ HEAD is now at ea34578 add distributed
 
 看看readme.txt的内容是不是版本`add distributed`：
 
-```shell
+```bash
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software.
@@ -111,7 +110,7 @@ Git is free software.
 
 还可以继续回退到上一个版本`wrote a readme file`，不过且慢，然我们用`git log`再看看现在版本库的状态：
 
-```shell
+```bash
 $ git log
 commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
 Author: Michael Liao <askxuefeng@gmail.com>
@@ -130,7 +129,7 @@ Date:   Mon Aug 19 17:51:55 2013 +0800
 
 办法其实还是有的，只要上面的命令行窗口还没有被关掉，你就可以顺着往上找啊找啊，找到那个`append GPL`的`commit id`是`3628164...`，于是就可以指定回到未来的某个版本：
 
-```shell
+```bash
 $ git reset --hard 3628164
 HEAD is now at 3628164 append GPL
 ```
@@ -139,7 +138,7 @@ HEAD is now at 3628164 append GPL
 
 再小心翼翼地看看readme.txt的内容：
 
-```shell
+```bash
 $ cat readme.txt
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
@@ -161,7 +160,7 @@ Git的版本回退速度非常快，因为Git在内部有个指向当前版本�
 
 在Git中，总是有后悔药可以吃的。当你用`$ git reset --hard HEAD^`回退到`add distributed`版本时，再想恢复到`append GPL`，就必须找到`append GPL`的commit id。Git提供了一个命令`git reflog`用来记录你的每一次命令：
 
-```shell
+```bash
 $ git reflog
 ea34578 HEAD@{0}: reset: moving to HEAD^
 3628164 HEAD@{1}: commit: append GPL

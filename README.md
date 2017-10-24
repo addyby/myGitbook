@@ -1,5 +1,5 @@
 # 项目开发持续集成环境手册
-&nbsp;&nbsp;&nbsp;&nbsp;by **[addy](mailto:addy@tom.com)**  2017年10月
+&nbsp;&nbsp;&nbsp;&nbsp;整理 by **[addy](mailto:addy@tom.com)**  2017年10月
 
 ---
 

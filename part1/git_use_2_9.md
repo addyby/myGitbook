@@ -6,7 +6,7 @@
 
 如果只是简单地从工作目录中手工删除文件，运行 `git status` 时就会在 “Changes not staged for commit” 部分（也就是 *未暂存清单*）看到：
 
-```shell
+```bash
 $ rm PROJECTS.md
 $ git status
 On branch master
@@ -22,7 +22,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 然后再运行 `git rm` 记录此次移除文件的操作：
 
-```shel
+```bash
 $ git rm PROJECTS.md
 rm 'PROJECTS.md'
 $ git status
@@ -37,19 +37,19 @@ Changes to be committed:
 
 另外一种情况是，我们想把文件从 Git 仓库中删除（亦即从暂存区域移除），但仍然希望保留在当前工作目录中。 换句话说，你想让文件保留在磁盘，但是并不想让 Git 继续跟踪。 当你忘记添加 `.gitignore` 文件，不小心把一个很大的日志文件或一堆 .a 这样的编译生成文件添加到暂存区时，这一做法尤其有用。 为达到这一目的，使用 `--cached` 选项：
 
-```shell
+```bash
 $ git rm --cached README
 ```
 
 `git rm` 命令后面可以列出文件或者目录的名字，也可以使用 glob 模式。 比方说：
 
-```shell
+```bash
 $ git rm log/\*.log
 ```
 
 注意到星号 `*` 之前的反斜杠 `\`， 因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开。 此命令删除 log/ 目录下扩展名为 .log 的所有文件。 类似的比如：
 
-```shell
+```bash
 $ git rm \*~
 ```
 

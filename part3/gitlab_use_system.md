@@ -1,14 +1,13 @@
 ## 2.5 系统维护命令
 
-```
+```bash
 查看状态
 sudo gitlab-ctl status
-
 ```
 
 ## 启停
 
-```
+```bash
 # 启动Gitlab所有组件
 sudo gitlab-ctl start
 
@@ -17,7 +16,6 @@ sudo gitlab-ctl stop
 
 # 重启Gitlab所有组件
 sudo gitlab-ctl restart
-
 ```
 
 ## 备份
@@ -26,16 +24,15 @@ sudo gitlab-ctl restart
 
 配置文件再/etc/gitlab/ 下面，将所有的配置用tar备份即可
 
-```
+```bash
 [root@localhost init.d]# cd /etc/gitlab/
 [root@localhost gitlab]# ls
 gitlab.rb  gitlab-secrets.json  trusted-certs
-
 ```
 
 ### 备份data （以包安装的方式）
 
-```
+```bash
 [root@localhost ~]# sudo gitlab-rake gitlab:backup:create
 Dumping database ... 
 Dumping PostgreSQL database gitlabhq_production ... [DONE]
@@ -69,12 +66,11 @@ done
 Deleting old backups ... skipping
 
 /var/opt/gitlab/backups/1490183942_2017_03_22_gitlab_backup.tar
-
 ```
 
 ## 恢复数据 （针对以包安装的方式）
 
-```
+```bash
 [root@localhost ~]# sudo gitlab-ctl stop unicorn
 [root@localhost ~]# sudo gitlab-ctl stop sidekiq
 [root@localhost ~]# sudo gitlab-ctl status

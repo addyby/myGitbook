@@ -8,7 +8,7 @@
 
 假如再次修改 README 文件后暂存，然后编辑 CONTRIBUTING.md 文件后先不暂存， 运行 `status` 命令将会看到：
 
-```shell
+```bash
 $ git status
 On branch master
 Changes to be committed:
@@ -25,7 +25,7 @@ Changes not staged for commit:
 
 要查看尚未暂存的文件更新了哪些部分，不加参数直接输入 `git diff`：
 
-```shell
+```bash
 $ git diff
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 8ebb991..643e24f 100644
@@ -47,7 +47,7 @@ index 8ebb991..643e24f 100644
 
 若要查看已暂存的将要添加到下次提交里的内容，可以用 `git diff --cached` 命令。（Git 1.6.1 及更高版本还允许使用 `git diff --staged`，效果是相同的，但更好记些。）
 
-```shell
+```bash
 $ git diff --staged
 diff --git a/README b/README
 new file mode 100644
@@ -62,7 +62,7 @@ index 0000000..03902a1
 
 像之前说的，暂存 CONTRIBUTING.md 后再编辑，运行 `git status` 会看到暂存前后的两个版本。 如果我们的环境（终端输出）看起来如下：
 
-```shell
+```bash
 $ git add CONTRIBUTING.md
 $ echo '# test line' >> CONTRIBUTING.md
 $ git status
@@ -81,7 +81,7 @@ Changes not staged for commit:
 
 现在运行 `git diff` 看暂存前后的变化：
 
-```shell
+```bash
 $ git diff
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 643e24f..87f08c8 100644
@@ -96,7 +96,7 @@ index 643e24f..87f08c8 100644
 
 然后用 `git diff --cached` 查看已经暂存起来的变化：（--staged 和 --cached 是同义词）
 
-```shell
+```bash
 $ git diff --cached
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
 index 8ebb991..643e24f 100644

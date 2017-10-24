@@ -30,7 +30,7 @@ Gitlab开启SSH方式访问的前提是需要上传你本地账户的SSH公钥�
 
 至此你就可以用Git命令初始化版本库。
 
-```shell
+```bash
 git clone git@10.12.110.122:root/demo.git
 cd demo
 touch README.md
@@ -40,7 +40,7 @@ git push -u origin master
 ```
 如果项目存在需要导入到gitlab可以直接将项目导入上去
 
-```
+```bash
 cd existing_folder
 git init
 git remote add origin git@10.12.110.122:root/demo.git

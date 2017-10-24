@@ -47,7 +47,7 @@ Git版本库允许创建分支，分支分为本地分支和远程分支。
 
 使用Git命令实现：
 
-```shell
+```bash
 git clone git@10.12.110.122:root/demo.git
 cd demo
 git checkout -b newBranch  //创建一个本地新分支并切换到新分支
@@ -57,7 +57,7 @@ git push origin newBranch  //推送新分支到服务器
 
 对于已经存在的远程分支可使用直接克隆到本地：
 
-```shell
+```bash
 git clone -b <branch name> [remote repository address]
 ```
 

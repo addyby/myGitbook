@@ -2,11 +2,11 @@
 typora-copy-images-to: images
 ---
 
-# Git的安装
+## Git的安装
 
 ---
 
-## 1. 安装准备
+## 安装准备
 
 **Git for windows**：https://git-for-windows.github.io/
 
@@ -20,7 +20,7 @@ typora-copy-images-to: images
 
 
 
-## 2. 安装软件
+## 安装软件
 
 首先安装`Git for windows`，然后安装`TortoiseGit`，最后安装`中文语言包`。
 
@@ -34,9 +34,13 @@ typora-copy-images-to: images
 
   ​
 
+  ​
+
 * 安装Git for windows时，建议选择`Use Git from the Windows Command Prompt`， 这样在Windows的命令行cmd中也可以运行git命令。
 
   ![1507905344150](images/1507905344150.png)
+
+  ​
 
   ​
 
@@ -48,15 +52,19 @@ typora-copy-images-to: images
 
   ​
 
-## 3. 配置Git
+  ​
 
-### 3\.1 Git生成SSH key
+## 配置Git
+
+
+
+### Git生成SSH key
 
 从开始菜单中找到`Git Bash`，打开git的命令行模式。
 
 进入.ssh文件夹。
 
-```shell
+```bash
 cd ~/.ssh
 ```
 
@@ -64,7 +72,7 @@ cd ~/.ssh
 
 配置全局的name和email，这里是的你gitab所注册的用户名和邮箱
 
-```shell
+```bash
 git config --global user.name "xxx"  
   
 git config --global user.email "xxx@qq.com"  
@@ -74,7 +82,7 @@ git config --global user.email "xxx@qq.com"
 
 生成SSH的公钥和私钥，默认文件名为id_rsa文件和id_rsa.pub文件。（如果不设置密码直接敲几次回车即可）
 
-```shell
+```bash
 ssh-keygen -t rsa -C "邮箱地址"
 ```
 
@@ -82,11 +90,15 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 
 
-### 3.2 配置TortoiseGit
+
+
+### 配置TortoiseGit
 
 在空白处点击右键可以看到TortoiseGit的选项，选择设置settings.
 
 ![1507908402675](images/1507908402675.png)
+
+
 
 
 
@@ -96,9 +108,13 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 
 
+
+
 在Git设置项中设置用户名和电子邮件。
 
 ![1507909307204](images/1507909307204.png)
+
+
 
 
 
@@ -131,7 +147,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 
 
-## 3. 多个SSH key的存放
+## 多个SSH key的存放
 
 当有多个git账号的时候，比如一个github，用于自己进行一些开发活动，再来一个gitlab，一般是公司内部的git。这两者你的邮箱如果不同的话，就会涉及到一个问题，生成第二个git的key的时候会覆盖第一个的key，导致必然有一个用不了。
 
@@ -143,7 +159,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 - 生成第一个ssh key(这里我用于github，用的gmail邮箱)
 
-```
+```bash
     ssh-keygen -t rsa -C "yourmail@gmail.com" -f id_rsa_github
 ```
 
@@ -154,9 +170,11 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 
 
+
+
 - 生成第二个ssh key（这里我用于gitlab，用的是公司邮箱）
 
-  ```
+  ```bash
    ssh-keygen -t rsa -C "yourmail@gmail.com" -f id_rsa_gitlab
   ```
 
@@ -168,7 +186,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 
 - 添加私钥
 
-  ```
+  ```bash
    ssh-add ~/.ssh/id_rsa_github
    ssh-add ~/.ssh/id_rsa_gitlab
   ```
@@ -179,7 +197,7 @@ ssh-keygen -t rsa -C "邮箱地址"
 在bash下的话直接`touch config` 即可。
 添加一下内容
 
-```
+```bash
     # gitlab
     Host 10.12.110.122
         HostName 10.12.110.122
@@ -215,7 +233,7 @@ PS:如果到这里你没有成功的话，别急，教你解决问题的终极�
 
 如果之前有设置全局用户名和邮箱的话，需要unset一下
 
-```
+```bash
 git config --global --unset user.name
 git config --global --unset user.email
 ```
