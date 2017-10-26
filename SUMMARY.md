@@ -58,19 +58,34 @@
 
 ## Redmine 项目管理和缺陷跟踪系统
 
-* [介绍](redmine/README.md)
-* 用户账号
-* 项目管理
-  * 问题跟踪
-  * 实时跟踪
-  * 新闻
-  * 文档
-  * 文件
-  * 讨论区
-  * Wikis
-  * Redmine wiki的文本格式
-  * 版本库
-  * 项目配置
+* [1. 介绍](redmine/README.md)
+* [2. 用户账号](redmine/rd_user.md)
+* [3. 项目管理](redmine/proj.md)
+  * [3.1 新建项目](redmine/proj_add.md)
+
+  * [3.2 项目活动](redmine/proj_active.md)
+
+  * [3.3 问题跟踪](redmine/proj_Issue.md)
+
+  * [3.4 耗时](redmine/proj_time.md)
+
+  * [3.5 甘特图](redmine/proj_gantt.md)
+
+  * [3.6 日历](redmine/proj_date.md)
+
+  * [3.7 新闻](redmine/proj_news.md)
+
+  * [3.8 文档](redmine/proj_doc.md)
+
+  * [3.9 文件](redmine/proj_file.md)
+
+  * [3.10 讨论区](redmine/proj_bbs.md)
+
+  * [3.11 Wikis](redmine/proj_wiki.md)
+
+  * [3.12 版本库](redmine/proj_lab.md)
+* [4. 项目配置](redmine/config.md)
+* [5. 管理流程](redmine/flow.md)
 
 ## Jenkins 可持续集成系统
 
